@@ -9,10 +9,11 @@ import { HeaderComponent } from './common/header/header.component';
 import { RentalComponent } from './rental/rental.component';
 import { TempComponent } from './temp/temp.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { RentalDetailComponent } from "./rental/rental-detail/rental-detail.component";
 
 
 const routes:Routes = [
-  {path: "", component: RentalComponent },
+  {path: "", redirectTo:'/rentals',pathMatch:'full'},
   {path: "temp", component: TempComponent }
 ];
 
@@ -20,7 +21,6 @@ const routes:Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    // RentalComponent,
     TempComponent,
     FooterComponent
   ],

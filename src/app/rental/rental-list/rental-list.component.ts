@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RentalService } from "../shared/rental.service";
 
 @Component({
   selector: 'app-rental-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentalListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rentalService: RentalService) { }
+
+  arrRentals:any = [];
 
   ngOnInit() {
+      // this.arrRentals = this.rentalService.getRentals();        
+      this.rentalService.getRentals().subscribe((data)=>{
+          this.arrRentals = data;
+      },
+      (err)=>{
+
+      },
+      ()=>{
+
+      });
   }
 
 }
